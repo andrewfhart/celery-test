@@ -1,0 +1,7 @@
+BROKER_URL = 'redis://'
+CELERY_RESULT_BACKEND = 'redis://'
+
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/Los_Angeles'
+CELERY_ENABLE_UTC = True
