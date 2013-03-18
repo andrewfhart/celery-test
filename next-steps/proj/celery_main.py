@@ -3,10 +3,13 @@ from __future__ import absolute_import
 from celery import Celery
 import proj.celeryconfig as config
 
-celery = Celery('proj.celery_main',
-                broker=config.BROKER_URL,
-                backend=config.CELERY_RESULT_BACKEND,
-                include=['proj.tasks'])
+#celery = Celery('proj.celery_main',
+#                broker=config.BROKER_URL,
+#                backend=config.CELERY_RESULT_BACKEND,
+#                include=['proj.tasks'])
+#
+celery = Celery('proj.celery_main', include=['proj.tasks'])
+celery.config_from_object(config)
                 
 # Optional configuration
 celery.conf.update(
